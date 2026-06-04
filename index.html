@@ -5,6 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Private Lesson Mentorship | Dallas Arsenal Volleyball Club</title>
   <meta name="description" content="Private volleyball mentorship on a 10-month membership. More than a coach: a customized training plan, regular check-ins, and 1-on-1 sessions once a month, bi-weekly, or weekly. Pay in full and get one month free." />
+  <!-- Favicons (Dallas Arsenal) -->
+  <link rel="icon" type="image/png" sizes="192x192" href="favicon.png" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+
+  <!-- Social share / Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dallas Arsenal Volleyball Club" />
+  <meta property="og:title" content="Private Lesson Mentorship | Dallas Arsenal Volleyball Club" />
+  <meta property="og:description" content="More than a coach. A 10-month 1-on-1 volleyball mentorship with a customized training plan, film review, and a mentor in your athlete's corner. Pay in full and get one month free." />
+  <meta property="og:image" content="https://dallasarsenal.com/wp-content/uploads/2019/11/cropped-cropped-Arsenal_Shield_Logo-1-300x300.png" />
+  <meta property="og:image:width" content="300" />
+  <meta property="og:image:height" content="300" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Private Lesson Mentorship | Dallas Arsenal Volleyball Club" />
+  <meta name="twitter:description" content="More than a coach. A 10-month 1-on-1 volleyball mentorship with a customized plan, film review, and a mentor in your athlete's corner." />
+  <meta name="twitter:image" content="https://dallasarsenal.com/wp-content/uploads/2019/11/cropped-cropped-Arsenal_Shield_Logo-1-300x300.png" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
@@ -286,6 +303,39 @@
       .plan.featured { order: -1; }
     }
 
+    /* ============ DEPOSIT (revealed by plan CTAs) ============ */
+    .deposit {
+      background:
+        radial-gradient(700px 320px at 50% -10%, rgba(255,168,0,.18), transparent 60%),
+        linear-gradient(160deg, var(--navy) 0%, var(--navy-deep) 85%);
+      padding: 66px 0; color: #fff; scroll-margin-top: 84px;
+    }
+    .deposit[hidden] { display: none; }
+    .deposit .deposit-card {
+      max-width: 520px; margin: 0 auto; text-align: center;
+      background: #fff; color: var(--ink);
+      border: 2px solid var(--gold); border-radius: var(--radius-lg);
+      padding: 38px 32px 30px; box-shadow: 0 22px 55px rgba(0,0,40,.35);
+    }
+    .deposit .kicker {
+      font-family: var(--display); font-weight: 800; font-size: 12px;
+      letter-spacing: .18em; text-transform: uppercase; color: var(--gold-dark);
+      display: block; margin-bottom: 10px;
+    }
+    .deposit h2 {
+      font-size: clamp(23px, 4vw, 31px); font-weight: 800; text-transform: uppercase;
+      letter-spacing: -.01em; color: var(--navy);
+    }
+    .deposit h2 .amount { color: var(--gold-dark); }
+    .deposit .deposit-lede { color: var(--ink-2); font-size: 15.5px; margin: 14px auto 0; max-width: 430px; }
+    .deposit .deposit-lede b { color: var(--navy); }
+    .deposit .qr {
+      width: 240px; height: 240px; object-fit: contain;
+      margin: 24px auto 8px; border-radius: 14px; border: 1px solid var(--hairline);
+      background: #fff; padding: 8px;
+    }
+    .deposit .deposit-note { font-size: 13px; color: var(--muted); margin-top: 4px; }
+
     /* ============ COMPARE TABLE (mirrors plans-v2) ============ */
     .compare-table {
       background: #fff; border-radius: var(--radius-lg);
@@ -420,7 +470,7 @@
       <div style="text-align:center;">
         <div class="billing-toggle" role="group" aria-label="Choose payment plan">
           <span class="slider" id="toggleSlider"></span>
-          <button id="btnMonthly" aria-pressed="true" onclick="setMode('monthly')">Pay Monthly</button>
+          <button id="btnMonthly" aria-pressed="true" onclick="setMode('monthly')">Pay per session</button>
           <button id="btnFull" aria-pressed="false" onclick="setMode('full')">Pay in Full <span class="save">1 month free</span></button>
         </div>
         <p class="toggle-note">
@@ -442,10 +492,11 @@
           </div>
           <div class="price-foot">1 session each month · <b>10 sessions</b> per season</div>
 
+
           <div class="paybox">
             <div class="pay pay--monthly">
               <div class="pay-big">$115<small> / month</small></div>
-              <div class="pay-sub">Billed monthly for 10 months · <b>$1,150</b> total</div>
+              <div class="pay-sub">Billed monthly · 10 payments · <b>$1,150</b> total</div>
             </div>
             <div class="pay pay--full">
               <span class="free-pill">1 Month Free</span>
@@ -460,7 +511,7 @@
             <li>Makeup &amp; sick-day flexibility</li>
             <li>Unlimited online skills drills</li>
           </ul>
-          <a class="cta" href="#">Choose Once a Month</a>
+          <a class="cta" href="#deposit" onclick="showDeposit('The Foundation (once a month)'); return false;">Choose Once a Month</a>
         </article>
 
         <!-- Bi-Weekly -->
@@ -472,12 +523,12 @@
           <div class="price">
             <span class="amt">$105</span><span class="per">/ session</span>
           </div>
-          <div class="price-foot">2 sessions each month · <b>20 sessions</b> per season</div>
+          <div class="price-foot">1 session every 2 weeks · <b>20 sessions</b> per season</div>
 
           <div class="paybox">
             <div class="pay pay--monthly">
-              <div class="pay-big">$210<small> / month</small></div>
-              <div class="pay-sub">Billed monthly for 10 months · <b>$2,100</b> total</div>
+              <div class="pay-big">$105<small> / 2 weeks</small></div>
+              <div class="pay-sub">Billed every 2 weeks · 20 payments · <b>$2,100</b> total</div>
             </div>
             <div class="pay pay--full">
               <span class="free-pill">1 Month Free</span>
@@ -492,7 +543,7 @@
             <li>Strength &amp; conditioning</li>
             <li>Bi-weekly check-ins</li>
           </ul>
-          <a class="cta" href="#">Choose Bi-Weekly</a>
+          <a class="cta" href="#deposit" onclick="showDeposit('Build Momentum (bi-weekly)'); return false;">Choose Bi-Weekly</a>
         </article>
 
         <!-- Weekly (featured) -->
@@ -505,12 +556,12 @@
           <div class="price">
             <span class="amt">$100</span><span class="per">/ session</span>
           </div>
-          <div class="price-foot">~4 sessions each month · <b>40 sessions</b> per season</div>
+          <div class="price-foot">1 session each week · <b>40 sessions</b> per season</div>
 
           <div class="paybox">
             <div class="pay pay--monthly">
-              <div class="pay-big">$400<small> / month</small></div>
-              <div class="pay-sub">Billed monthly for 10 months · <b>$4,000</b> total</div>
+              <div class="pay-big">$100<small> / week</small></div>
+              <div class="pay-sub">Billed weekly · 40 payments · <b>$4,000</b> total</div>
             </div>
             <div class="pay pay--full">
               <span class="free-pill">1 Month Free</span>
@@ -525,9 +576,22 @@
             <li>Personalized analysis: nutrition, training &amp; stretching</li>
             <li>Full mentor access &amp; weekly check-ins</li>
           </ul>
-          <a class="cta" href="#">Choose Weekly</a>
+          <a class="cta" href="#deposit" onclick="showDeposit('The Full Program (weekly)'); return false;">Choose Weekly</a>
         </article>
 
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== DEPOSIT (hidden until a plan CTA is clicked) ===================== -->
+  <section class="deposit" id="deposit" hidden aria-hidden="true" aria-labelledby="depositHeading">
+    <div class="wrap">
+      <div class="deposit-card">
+        <span class="kicker">Almost there</span>
+        <h2 id="depositHeading">Secure your spot with a <span class="amount">$100 deposit</span></h2>
+        <p class="deposit-lede">You're reserving <b id="depositPlan">your membership</b>. Scan the code below and put down a $100 deposit to secure your spot. We'll reach out to schedule your first session.</p>
+        <img class="qr" src="qrcode.jpeg" alt="PayPal QR code. Scan to pay your $100 deposit." loading="lazy" />
+        <p class="deposit-note">Scan with your phone camera or any PayPal app to pay securely.</p>
       </div>
     </div>
   </section>
@@ -555,10 +619,10 @@
           <div>The basics</div><div class="col"></div><div class="col"></div><div class="col feat"></div>
         </div>
         <div class="compare-row">
-          <div class="feat-name">Sessions per month</div>
-          <div class="col val">1</div>
-          <div class="col val">2</div>
-          <div class="col val feat">~4</div>
+          <div class="feat-name">Sessions per season</div>
+          <div class="col val">10</div>
+          <div class="col val">20</div>
+          <div class="col val feat">40</div>
         </div>
         <div class="compare-row">
           <div class="feat-name">Check-in cadence</div>
@@ -680,6 +744,16 @@
   </footer>
 
   <script>
+    function showDeposit(planName) {
+      var sec = document.getElementById('deposit');
+      if (!sec) return;
+      var label = document.getElementById('depositPlan');
+      if (label && planName) label.textContent = planName;
+      sec.hidden = false;
+      sec.setAttribute('aria-hidden', 'false');
+      sec.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
     function setMode(mode) {
       var plans = document.getElementById('planCards');
       var btnM = document.getElementById('btnMonthly');
