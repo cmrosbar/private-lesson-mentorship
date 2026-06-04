@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Private Lesson Mentorship | Dallas Arsenal Volleyball Club</title>
+  <meta name="description" content="Private volleyball mentorship on a 10-month membership. More than a coach: a customized training plan, regular check-ins, and 1-on-1 sessions once a month, bi-weekly, or weekly. Pay in full and get one month free." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      /* ---- Dallas Arsenal palette (pulled from dallasarsenal.com) ---- */
+      --navy:        #000068;   /* primary brand / "skin" color */
+      --navy-deep:   #00002b;   /* darkest navy */
+      --navy-ink:    #08192a;   /* dark section background */
+      --navy-tint:   #ececf6;   /* pale navy wash */
+      --gold:        #ffa800;   /* brand accent gold */
+      --gold-dark:   #e09400;
+      --gold-tint:   #fff4dd;
+
+      --white:       #ffffff;
+      --paper:       #f4f5fa;   /* page / alt section background */
+      --ink:         #14182e;   /* primary text */
+      --ink-2:       #3a4058;
+      --muted:       #6a7184;   /* muted body copy */
+      --ghost:       #9aa2b5;   /* "not included" dash */
+      --hairline:    #e3e5ee;   /* dividers / card borders */
+
+      --display: 'Montserrat', 'Trebuchet MS', system-ui, sans-serif;
+      --body:    'Roboto', system-ui, -apple-system, sans-serif;
+
+      --radius-lg: 24px;
+      --radius-md: 16px;
+      --radius-sm: 12px;
+      --radius-pill: 999px;
+      --shadow: 0 18px 50px rgba(0, 0, 50, 0.10);
+      --shadow-sm: 0 6px 20px rgba(0, 0, 50, 0.07);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: var(--body);
+      color: var(--ink);
+      background: var(--paper);
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.55;
+    }
+    h1, h2, h3, h4 { font-family: var(--display); color: var(--ink); margin: 0; line-height: 1.1; }
+    p { margin: 0; }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    .wrap { width: 100%; max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+
+    /* ============ NAV ============ */
+    .nav {
+      position: sticky; top: 0; z-index: 50;
+      background: var(--navy);
+      color: #fff;
+      box-shadow: 0 2px 18px rgba(0,0,40,.25);
+    }
+    .nav-inner { display: flex; align-items: center; gap: 18px; height: 72px; }
+    .brand { display: flex; align-items: center; gap: 12px; }
+    .brand .shield {
+      width: 42px; height: 42px; flex: none;
+      display: grid; place-items: center;
+    }
+    .brand .shield img { width: 42px; height: 42px; object-fit: contain; }
+    .brand .wordmark { display: flex; flex-direction: column; line-height: 1; }
+    .brand .wordmark b {
+      font-family: var(--display); font-weight: 800; letter-spacing: .14em;
+      font-size: 15px; color: #fff; text-transform: uppercase;
+    }
+    .brand .wordmark span {
+      font-family: var(--display); font-weight: 600; letter-spacing: .26em;
+      font-size: 9.5px; color: var(--gold); text-transform: uppercase; margin-top: 3px;
+    }
+    .nav-links { margin-left: auto; display: flex; align-items: center; gap: 30px; }
+    .nav-links a {
+      font-family: var(--display); font-weight: 600; font-size: 13px;
+      text-transform: uppercase; letter-spacing: .06em; color: #cfd2f0;
+      transition: color .15s;
+    }
+    .nav-links a:hover { color: #fff; }
+    .nav-links a.active { color: var(--gold); }
+    .nav-cta {
+      font-family: var(--display); font-weight: 700; font-size: 13px;
+      text-transform: uppercase; letter-spacing: .06em;
+      background: var(--gold); color: var(--navy-deep) !important;
+      padding: 11px 20px; border-radius: var(--radius-pill);
+      transition: transform .15s, background .15s;
+    }
+    .nav-cta:hover { background: #ffbb33; transform: translateY(-1px); }
+    @media (max-width: 860px) { .nav-links a:not(.nav-cta) { display: none; } }
+
+    /* ============ HERO ============ */
+    .hero {
+      position: relative; overflow: hidden;
+      background:
+        radial-gradient(1100px 460px at 78% -8%, rgba(255,168,0,.20), transparent 60%),
+        radial-gradient(900px 520px at 10% 110%, rgba(43,140,236,.18), transparent 60%),
+        linear-gradient(160deg, var(--navy) 0%, var(--navy-deep) 78%);
+      color: #fff;
+      padding: 78px 0 96px;
+      text-align: center;
+    }
+    /* faint net / court lines */
+    .hero::after {
+      content: ""; position: absolute; inset: 0; opacity: .06; pointer-events: none;
+      background-image:
+        linear-gradient(rgba(255,255,255,.9) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.9) 1px, transparent 1px);
+      background-size: 46px 46px;
+      mask-image: radial-gradient(80% 80% at 50% 30%, #000 40%, transparent 100%);
+    }
+    .hero > .wrap { position: relative; z-index: 1; }
+    .eyebrow {
+      display: inline-block;
+      font-family: var(--display); font-weight: 700; font-size: 12px;
+      letter-spacing: .22em; text-transform: uppercase; color: var(--gold);
+      border: 1px solid rgba(255,168,0,.45); border-radius: var(--radius-pill);
+      padding: 8px 18px; margin-bottom: 22px;
+      background: rgba(255,168,0,.08);
+    }
+    .hero h1 {
+      color: #fff; font-weight: 900; letter-spacing: -.01em;
+      font-size: clamp(34px, 6vw, 60px); margin: 0 auto;
+      max-width: 16ch; text-transform: uppercase;
+    }
+    .hero h1 em { color: var(--gold); font-style: normal; }
+    .hero .lede {
+      max-width: 620px; margin: 22px auto 0; font-size: 18px;
+      color: #d4d7f0; font-weight: 300;
+    }
+    .hero-points {
+      display: flex; flex-wrap: wrap; gap: 10px 26px; justify-content: center;
+      margin: 30px auto 0; padding: 0; list-style: none;
+    }
+    .hero-points li {
+      font-family: var(--display); font-weight: 600; font-size: 13px;
+      letter-spacing: .04em; color: #eef0ff; display: flex; align-items: center; gap: 8px;
+    }
+    .hero-points li::before {
+      content: "✓"; color: var(--navy-deep); background: var(--gold);
+      width: 18px; height: 18px; border-radius: 50%;
+      display: inline-grid; place-items: center; font-size: 11px; font-weight: 900;
+    }
+
+    /* ============ SECTION SHELL ============ */
+    .section { padding: 76px 0; }
+    .section.alt { background: #fff; }
+    .section-head { text-align: center; max-width: 640px; margin: 0 auto 44px; }
+    .section-head .kicker {
+      font-family: var(--display); font-weight: 700; font-size: 12px;
+      letter-spacing: .2em; text-transform: uppercase; color: var(--gold-dark);
+      display: block; margin-bottom: 12px;
+    }
+    .section-head h2 {
+      font-size: clamp(28px, 4vw, 40px); font-weight: 800; text-transform: uppercase;
+      letter-spacing: -.01em;
+    }
+    .section-head h2 .accent { color: var(--navy); }
+    .section-head .sub { color: var(--muted); font-size: 16px; margin-top: 14px; }
+
+    /* ============ BILLING TOGGLE ============ */
+    .billing-toggle {
+      display: inline-flex; align-items: center; gap: 4px;
+      background: var(--navy-tint); border: 1px solid #d9dbf0;
+      padding: 5px; border-radius: var(--radius-pill);
+      margin: 0 auto 8px; position: relative;
+    }
+    .billing-toggle button {
+      font-family: var(--display); font-weight: 700; font-size: 13.5px;
+      letter-spacing: .03em; cursor: pointer; border: 0; background: transparent;
+      color: var(--navy); padding: 11px 22px; border-radius: var(--radius-pill);
+      transition: color .2s; white-space: nowrap;
+    }
+    .billing-toggle button .save {
+      display: inline-block; margin-left: 7px; font-size: 11px; font-weight: 800;
+      color: var(--gold-dark); background: var(--gold-tint);
+      padding: 2px 8px; border-radius: var(--radius-pill); vertical-align: middle;
+    }
+    .billing-toggle .slider {
+      position: absolute; top: 5px; bottom: 5px; left: 5px;
+      border-radius: var(--radius-pill); background: var(--navy);
+      box-shadow: 0 4px 12px rgba(0,0,60,.28); transition: transform .25s ease, width .25s ease;
+      z-index: 0;
+    }
+    .billing-toggle button { position: relative; z-index: 1; }
+    .billing-toggle button[aria-pressed="true"] { color: #fff; }
+    .billing-toggle button[aria-pressed="true"] .save { background: rgba(255,168,0,.22); color: var(--gold); }
+    .toggle-note {
+      text-align: center; font-size: 13.5px; color: var(--muted); margin-top: 14px;
+    }
+    .toggle-note b { color: var(--navy); font-weight: 700; }
+
+    /* ============ PRICING CARDS ============ */
+    .plans {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px;
+      align-items: stretch; margin-top: 44px;
+    }
+    .plan {
+      position: relative; background: #fff; border: 1px solid var(--hairline);
+      border-radius: var(--radius-lg); padding: 32px 26px 30px;
+      display: flex; flex-direction: column; box-shadow: var(--shadow-sm);
+      transition: transform .18s, box-shadow .18s;
+    }
+    .plan:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+    .plan.featured {
+      border: 2px solid var(--gold);
+      box-shadow: 0 22px 55px rgba(255,168,0,.22);
+    }
+    .plan .tag {
+      position: absolute; top: -14px; left: 50%; transform: translateX(-50%);
+      font-family: var(--display); font-weight: 800; font-size: 11px;
+      letter-spacing: .12em; text-transform: uppercase;
+      background: var(--gold); color: var(--navy-deep);
+      padding: 7px 16px; border-radius: var(--radius-pill); white-space: nowrap;
+      box-shadow: 0 6px 16px rgba(255,168,0,.4);
+    }
+    .plan .freq {
+      font-family: var(--display); font-weight: 700; font-size: 12px;
+      letter-spacing: .12em; text-transform: uppercase; color: var(--gold-dark);
+      background: var(--gold-tint); align-self: flex-start;
+      padding: 6px 14px; border-radius: var(--radius-pill);
+    }
+    .plan h3 {
+      font-size: 26px; font-weight: 800; text-transform: uppercase;
+      margin: 16px 0 4px; color: var(--navy);
+    }
+    .plan .tier-label { font-size: 13px; color: var(--muted); font-weight: 500; }
+
+    .price { display: flex; align-items: baseline; gap: 6px; margin: 22px 0 2px; }
+    .price .amt { font-family: var(--display); font-weight: 900; font-size: 52px; color: var(--ink); letter-spacing: -.02em; }
+    .price .per { font-size: 15px; color: var(--muted); font-weight: 500; }
+    .price-foot { font-size: 13.5px; color: var(--muted); }
+    .price-foot b { color: var(--ink-2); font-weight: 700; }
+
+    /* pay box: swapped by the billing toggle */
+    .paybox {
+      margin: 22px 0 26px; padding: 18px; border-radius: var(--radius-md);
+      background: var(--paper); border: 1px solid var(--hairline);
+    }
+    .pay { display: none; }
+    .plans.mode-monthly .pay--monthly { display: block; }
+    .plans.mode-full    .pay--full    { display: block; }
+    .pay .pay-big {
+      font-family: var(--display); font-weight: 900; font-size: 26px; color: var(--navy);
+    }
+    .pay .pay-big small { font-size: 14px; font-weight: 600; color: var(--muted); }
+    .pay .pay-sub { font-size: 13.5px; color: var(--muted); margin-top: 5px; }
+    .pay .pay-sub s { color: var(--ghost); }
+    .pay--full .free-pill {
+      display: inline-block; margin-bottom: 9px;
+      font-family: var(--display); font-weight: 800; font-size: 11px; letter-spacing: .1em;
+      text-transform: uppercase; color: var(--navy-deep); background: var(--gold);
+      padding: 4px 11px; border-radius: var(--radius-pill);
+    }
+    .pay--full .save-line { color: var(--gold-dark); font-weight: 700; }
+
+    .plan ul.feat-list { list-style: none; margin: 0 0 26px; padding: 0; display: grid; gap: 11px; }
+    .plan ul.feat-list li { display: flex; gap: 10px; font-size: 14.5px; color: var(--ink-2); }
+    .plan ul.feat-list li::before {
+      content: "✓"; flex: none; width: 19px; height: 19px; margin-top: 1px;
+      border-radius: 50%; background: var(--navy); color: #fff;
+      display: grid; place-items: center; font-size: 11px; font-weight: 900;
+    }
+    .plan.featured ul.feat-list li::before { background: var(--gold); color: var(--navy-deep); }
+    .plan .cta {
+      margin-top: auto;
+      font-family: var(--display); font-weight: 700; font-size: 14px;
+      letter-spacing: .04em; text-transform: uppercase; text-align: center;
+      padding: 15px; border-radius: var(--radius-pill);
+      border: 2px solid var(--navy); color: var(--navy); background: #fff;
+      transition: background .15s, color .15s, transform .15s;
+    }
+    .plan .cta:hover { background: var(--navy); color: #fff; transform: translateY(-1px); }
+    .plan.featured .cta { background: var(--gold); border-color: var(--gold); color: var(--navy-deep); }
+    .plan.featured .cta:hover { background: #ffbb33; border-color: #ffbb33; }
+
+    @media (max-width: 880px) {
+      .plans { grid-template-columns: 1fr; max-width: 440px; margin-inline: auto; }
+      .plan.featured { order: -1; }
+    }
+
+    /* ============ COMPARE TABLE (mirrors plans-v2) ============ */
+    .compare-table {
+      background: #fff; border-radius: var(--radius-lg);
+      border: 1px solid var(--hairline); overflow: hidden;
+      max-width: 900px; margin: 0 auto; box-shadow: var(--shadow-sm);
+    }
+    .compare-row {
+      display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr;
+      padding: 15px 22px; border-bottom: 1px solid var(--hairline);
+      align-items: center; font-size: 14.5px; color: var(--ink);
+    }
+    .compare-row:last-child { border-bottom: 0; }
+    .compare-row.hdr {
+      background: var(--navy); color: #fff;
+      font-family: var(--display); font-weight: 800;
+      text-transform: uppercase; letter-spacing: .05em; font-size: 13px;
+      padding-top: 18px; padding-bottom: 18px;
+    }
+    .compare-row.hdr .col,
+    .compare-row.hdr .feat-name { color: #fff; }
+    .compare-row.section-row {
+      background: #fafbff; font-family: var(--display); font-weight: 800;
+      text-transform: uppercase; letter-spacing: .05em; font-size: 11.5px; color: var(--muted);
+      padding-top: 11px; padding-bottom: 11px;
+    }
+    .compare-row .feat-name { font-weight: 600; color: var(--ink); }
+    .compare-row .col { text-align: center; }
+    .compare-row .col.val { font-family: var(--display); font-weight: 800; color: var(--ink); }
+    /* discount row: small savings note under the pay-in-full price */
+    .compare-row .col .save-amt {
+      display: block; font-family: var(--body); font-weight: 700;
+      font-size: 11px; color: var(--gold-dark); margin-top: 3px;
+      text-transform: none; letter-spacing: 0;
+    }
+    .compare-row.discount-row { background: var(--gold-tint); }
+    .compare-row.discount-row .feat-name { color: var(--gold-dark); }
+    .compare-row.discount-row .col.feat { background: rgba(255,168,0,.28); }
+    /* highlighted (best value) Weekly column */
+    .compare-row .col.feat { background: rgba(255,168,0,.10); font-weight: 800; color: var(--navy); }
+    .compare-row.hdr .col.feat { background: var(--gold); color: var(--navy-deep); }
+    .compare-row .col.feat .best {
+      display: block; font-size: 9.5px; letter-spacing: .12em; color: var(--navy-deep);
+      margin-top: 3px; font-weight: 800;
+    }
+    .check {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 23px; height: 23px; border-radius: 50%;
+      background: var(--navy); color: #fff; font-weight: 900; font-size: 13px;
+    }
+    .check.gold { background: var(--gold); color: var(--navy-deep); }
+    .dash {
+      display: inline-block; width: 18px; text-align: center;
+      color: var(--ghost); font-weight: 700; font-size: 18px; line-height: 1;
+    }
+    .compare-foot {
+      text-align: center; color: var(--muted); font-size: 14px; margin: 26px auto 0; max-width: 640px;
+    }
+    .compare-foot b { color: var(--navy); font-weight: 700; }
+
+    @media (max-width: 680px) {
+      .compare-row { grid-template-columns: 1.4fr repeat(3, 1fr); padding: 12px 12px; font-size: 12px; gap: 6px; }
+      .compare-row.hdr { font-size: 11px; }
+      .price .amt { font-size: 46px; }
+      .check { width: 20px; height: 20px; font-size: 11px; }
+    }
+
+    /* ============ FOOTER ============ */
+    .foot {
+      background: var(--navy-deep); color: #c9cdf0; padding: 48px 0 40px; text-align: center;
+    }
+    .foot .brand { justify-content: center; margin-bottom: 16px; }
+    .foot p { font-size: 13.5px; color: #9aa0cf; }
+    .foot .disc { margin-top: 18px; font-size: 12px; color: #6e74a8; }
+    .foot a.gold { color: var(--gold); font-weight: 600; }
+  </style>
+</head>
+<body>
+
+  <!-- ===================== NAV ===================== -->
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="#">
+        <span class="shield">
+          <img src="https://dallasarsenal.com/wp-content/uploads/2019/11/cropped-cropped-Arsenal_Shield_Logo-1-300x300.png"
+               alt="Dallas Arsenal shield"
+               onerror="this.style.display='none'" />
+        </span>
+        <span class="wordmark">
+          <b>Dallas Arsenal</b>
+          <span>Volleyball Club</span>
+        </span>
+      </a>
+      <nav class="nav-links">
+        <a href="#">Home</a>
+        <a href="#">Programs</a>
+        <a href="#plans" class="active">Private Lessons</a>
+        <a href="#compare">Compare</a>
+        <a href="#plans" class="nav-cta">Join Now</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===================== HERO ===================== -->
+  <section class="hero">
+    <div class="wrap">
+      <span class="eyebrow">10-Month 1-on-1 Mentorship</span>
+      <h1>Private Lesson <em>Mentorship</em></h1>
+      <p class="lede">
+        We are more. Your athlete gets a mentor who learns their game, builds a
+        training plan around their goals, and stays in their corner all season. Not another face
+        rolling through group classes. Choose how often you train: the more you commit, the lower
+        your per-session rate.
+      </p>
+      <ul class="hero-points">
+        <li>A mentor, not just a coach</li>
+        <li>A custom plan, not generic classes</li>
+        <li>Pay in full &amp; get 1 month free</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===================== PRICING ===================== -->
+  <section class="section" id="plans">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">Choose Your Membership</span>
+        <h2>Three ways to <span class="accent">train</span></h2>
+        <p class="sub">Every plan is a 10-month mentorship built around your athlete. Pick your cadence and how you pay.</p>
+      </div>
+
+      <!-- Billing toggle -->
+      <div style="text-align:center;">
+        <div class="billing-toggle" role="group" aria-label="Choose payment plan">
+          <span class="slider" id="toggleSlider"></span>
+          <button id="btnMonthly" aria-pressed="true" onclick="setMode('monthly')">Pay Monthly</button>
+          <button id="btnFull" aria-pressed="false" onclick="setMode('full')">Pay in Full <span class="save">1 month free</span></button>
+        </div>
+        <p class="toggle-note">
+          Pay the season up front and <b>get one month free</b>. That's 10% off, locked in.
+        </p>
+      </div>
+
+      <!-- Cards -->
+      <div class="plans mode-monthly" id="planCards">
+
+        <!-- Once a Month -->
+        <article class="plan">
+          <span class="freq">1× per month</span>
+          <h3>The Foundation</h3>
+          <div class="tier-label">Tier 1 · Once a month</div>
+
+          <div class="price">
+            <span class="amt">$115</span><span class="per">/ session</span>
+          </div>
+          <div class="price-foot">1 session each month · <b>10 sessions</b> per season</div>
+
+          <div class="paybox">
+            <div class="pay pay--monthly">
+              <div class="pay-big">$115<small> / month</small></div>
+              <div class="pay-sub">Billed monthly for 10 months · <b>$1,150</b> total</div>
+            </div>
+            <div class="pay pay--full">
+              <span class="free-pill">1 Month Free</span>
+              <div class="pay-big">$1,035<small> today</small></div>
+              <div class="pay-sub"><s>$1,150</s> &nbsp;<span class="save-line">Save $115</span></div>
+            </div>
+          </div>
+
+          <ul class="feat-list">
+            <li>1-on-1 private mentorship</li>
+            <li>Customized training plan</li>
+            <li>Makeup &amp; sick-day flexibility</li>
+            <li>Unlimited online skills drills</li>
+          </ul>
+          <a class="cta" href="#">Choose Once a Month</a>
+        </article>
+
+        <!-- Bi-Weekly -->
+        <article class="plan">
+          <span class="freq">2× per month</span>
+          <h3>Build Momentum</h3>
+          <div class="tier-label">Tier 2 · Bi-weekly</div>
+
+          <div class="price">
+            <span class="amt">$105</span><span class="per">/ session</span>
+          </div>
+          <div class="price-foot">2 sessions each month · <b>20 sessions</b> per season</div>
+
+          <div class="paybox">
+            <div class="pay pay--monthly">
+              <div class="pay-big">$210<small> / month</small></div>
+              <div class="pay-sub">Billed monthly for 10 months · <b>$2,100</b> total</div>
+            </div>
+            <div class="pay pay--full">
+              <span class="free-pill">1 Month Free</span>
+              <div class="pay-big">$1,890<small> today</small></div>
+              <div class="pay-sub"><s>$2,100</s> &nbsp;<span class="save-line">Save $210</span></div>
+            </div>
+          </div>
+
+          <ul class="feat-list">
+            <li>Everything in The Foundation</li>
+            <li>Personalized nutrition plan</li>
+            <li>Strength &amp; conditioning</li>
+            <li>Bi-weekly check-ins</li>
+          </ul>
+          <a class="cta" href="#">Choose Bi-Weekly</a>
+        </article>
+
+        <!-- Weekly (featured) -->
+        <article class="plan featured">
+          <span class="tag">★ Best Value</span>
+          <span class="freq">Weekly</span>
+          <h3>The Full Program</h3>
+          <div class="tier-label">Tier 3 · Weekly</div>
+
+          <div class="price">
+            <span class="amt">$100</span><span class="per">/ session</span>
+          </div>
+          <div class="price-foot">~4 sessions each month · <b>40 sessions</b> per season</div>
+
+          <div class="paybox">
+            <div class="pay pay--monthly">
+              <div class="pay-big">$400<small> / month</small></div>
+              <div class="pay-sub">Billed monthly for 10 months · <b>$4,000</b> total</div>
+            </div>
+            <div class="pay pay--full">
+              <span class="free-pill">1 Month Free</span>
+              <div class="pay-big">$3,600<small> today</small></div>
+              <div class="pay-sub"><s>$4,000</s> &nbsp;<span class="save-line">Save $400</span></div>
+            </div>
+          </div>
+
+          <ul class="feat-list">
+            <li>Everything in Build Momentum</li>
+            <li>Film review &amp; breakdown</li>
+            <li>Personalized analysis: nutrition, training &amp; stretching</li>
+            <li>Full mentor access &amp; weekly check-ins</li>
+          </ul>
+          <a class="cta" href="#">Choose Weekly</a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== COMPARE ===================== -->
+  <section class="section alt" id="compare">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">Side by Side</span>
+        <h2>Compare <span class="accent">memberships</span></h2>
+        <p class="sub">Every plan is real 1-on-1 mentorship with a customized training plan, not drop-in classes. Here's how the three tiers stack up.</p>
+      </div>
+
+      <div class="compare-table">
+        <!-- header -->
+        <div class="compare-row hdr">
+          <div class="feat-name">What you get</div>
+          <div class="col">Once a Month</div>
+          <div class="col">Bi-Weekly</div>
+          <div class="col feat">Weekly <span class="best">Best Value</span></div>
+        </div>
+
+        <!-- specs -->
+        <div class="compare-row section-row">
+          <div>The basics</div><div class="col"></div><div class="col"></div><div class="col feat"></div>
+        </div>
+        <div class="compare-row">
+          <div class="feat-name">Sessions per month</div>
+          <div class="col val">1</div>
+          <div class="col val">2</div>
+          <div class="col val feat">~4</div>
+        </div>
+        <div class="compare-row">
+          <div class="feat-name">Check-in cadence</div>
+          <div class="col val">Monthly</div>
+          <div class="col val">Bi-weekly</div>
+          <div class="col val feat">Weekly</div>
+        </div>
+        <div class="compare-row">
+          <div class="feat-name">Price per session</div>
+          <div class="col val">$115</div>
+          <div class="col val">$105</div>
+          <div class="col val feat">$100</div>
+        </div>
+        <div class="compare-row discount-row">
+          <div class="feat-name">Pay in full &amp; get 1 month free</div>
+          <div class="col val">$1,035<span class="save-amt">save $115</span></div>
+          <div class="col val">$1,890<span class="save-amt">save $210</span></div>
+          <div class="col val feat">$3,600<span class="save-amt">save $400</span></div>
+        </div>
+
+        <!-- mentorship & training features -->
+        <div class="compare-row section-row">
+          <div>Mentorship &amp; training</div><div class="col"></div><div class="col"></div><div class="col feat"></div>
+        </div>
+        <div class="compare-row">
+          <div class="feat-name">1-on-1 private mentorship</div>
+          <div class="col"><span class="check">✓</span></div>
+          <div class="col"><span class="check">✓</span></div>
+          <div class="col feat"><span class="check gold">✓</span></div>
+        </div>
+        <div class="compare-row">
+          <div class="feat-name">Customized training plan</div>
+          <div class="col"><span class="check">✓</span></div>
+          <div class="col"><span class="check">✓</span></div>
+          <div class="col feat"><span class="check gold">✓</span></div>
+        </div>
+        <div class="compare-row">
+          <div class="feat-name">Strength &amp; conditioning</div>
+          <div class="col"><span class="dash" aria-label="not included">–</span></div>
+          <div class="col"><span class="check">✓</span></div>
+          <div class="col feat"><span class="check gold">✓</span></div>
+        </div>
+        <div class="compare-row">
+          <div class="feat-name">Makeup classes</div>
+          <div class="col"><span class="check">✓</span></div>
+          <div class="col"><span class="check">✓</span></div>
+          <div class="col feat"><span class="check gold">✓</span></div>
+        </div>
+        <div class="compare-row">
+          <div class="feat-name">Sick-day rescheduling</div>
+          <div class="col"><span class="check">✓</span></div>
+          <div class="col"><span class="check">✓</span></div>
+          <div class="col feat"><span class="check gold">✓</span></div>
+        </div>
+        <div class="compare-row">
+          <div class="feat-name">Unlimited online skills drills</div>
+          <div class="col"><span class="check">✓</span></div>
+          <div class="col"><span class="check">✓</span></div>
+          <div class="col feat"><span class="check gold">✓</span></div>
+        </div>
+
+        <!-- nutrition + analysis -->
+        <div class="compare-row section-row">
+          <div>Performance &amp; nutrition</div><div class="col"></div><div class="col"></div><div class="col feat"></div>
+        </div>
+        <div class="compare-row">
+          <div class="feat-name">Personalized nutrition plan</div>
+          <div class="col"><span class="dash" aria-label="not included">–</span></div>
+          <div class="col"><span class="check">✓</span></div>
+          <div class="col feat"><span class="check gold">✓</span></div>
+        </div>
+        <div class="compare-row">
+          <div class="feat-name">Personalized analysis: nutrition, training &amp; stretching</div>
+          <div class="col"><span class="dash" aria-label="not included">–</span></div>
+          <div class="col"><span class="dash" aria-label="not included">–</span></div>
+          <div class="col feat"><span class="check gold">✓</span></div>
+        </div>
+        <!-- premium: the full program (weekly only) -->
+        <div class="compare-row section-row">
+          <div>The Full Program</div><div class="col"></div><div class="col"></div><div class="col feat"></div>
+        </div>
+        <div class="compare-row">
+          <div class="feat-name">Film review &amp; breakdown</div>
+          <div class="col"><span class="dash" aria-label="not included">–</span></div>
+          <div class="col"><span class="dash" aria-label="not included">–</span></div>
+          <div class="col feat"><span class="check gold">✓</span></div>
+        </div>
+        <div class="compare-row">
+          <div class="feat-name">Full access to your mentor</div>
+          <div class="col"><span class="dash" aria-label="not included">–</span></div>
+          <div class="col"><span class="dash" aria-label="not included">–</span></div>
+          <div class="col feat"><span class="check gold">✓</span></div>
+        </div>
+      </div>
+
+      <p class="compare-foot">
+        Prefer to pay up front? <b>Pay your full season and get one month free</b>, a 10% savings on any membership.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="foot">
+    <div class="wrap">
+      <a class="brand" href="#">
+        <span class="shield">
+          <img src="https://dallasarsenal.com/wp-content/uploads/2019/11/cropped-cropped-Arsenal_Shield_Logo-1-300x300.png"
+               alt="Dallas Arsenal shield" onerror="this.style.display='none'" />
+        </span>
+        <span class="wordmark">
+          <b>Dallas Arsenal</b>
+          <span>Volleyball Club</span>
+        </span>
+      </a>
+      <p>Private Lesson Mentorship · 10-Month Season · Plano, TX</p>
+      <p style="margin-top:6px;">Questions? <a class="gold" href="#">Contact your mentor →</a></p>
+      <p class="disc">Sample membership page for review. Pricing &amp; terms subject to change.</p>
+    </div>
+  </footer>
+
+  <script>
+    function setMode(mode) {
+      var plans = document.getElementById('planCards');
+      var btnM = document.getElementById('btnMonthly');
+      var btnF = document.getElementById('btnFull');
+      var slider = document.getElementById('toggleSlider');
+      var isFull = mode === 'full';
+
+      plans.classList.toggle('mode-full', isFull);
+      plans.classList.toggle('mode-monthly', !isFull);
+      btnM.setAttribute('aria-pressed', String(!isFull));
+      btnF.setAttribute('aria-pressed', String(isFull));
+
+      // slide the pill under the active button
+      var active = isFull ? btnF : btnM;
+      slider.style.width = active.offsetWidth + 'px';
+      slider.style.transform = 'translateX(' + (active.offsetLeft - 5) + 'px)';
+    }
+
+    // position the slider on load + when fonts/layout settle
+    function initSlider() { setMode('monthly'); }
+    window.addEventListener('load', initSlider);
+    window.addEventListener('resize', function () {
+      var isFull = document.getElementById('planCards').classList.contains('mode-full');
+      setMode(isFull ? 'full' : 'monthly');
+    });
+    initSlider();
+  </script>
+</body>
+</html>
