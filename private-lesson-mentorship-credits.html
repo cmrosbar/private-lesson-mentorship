@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Private Lesson Mentorship | Dallas Arsenal Volleyball Club</title>
-  <meta name="description" content="Private volleyball mentorship on a 10-month membership. More than a coach: a customized training plan, regular check-ins, and 1-on-1 sessions once a month, bi-weekly, or weekly. Pay in full and get one month free." />
+  <title>Private Lesson Credits | Dallas Arsenal Volleyball Club</title>
+  <meta name="description" content="Buy a pack of 1-on-1 private volleyball mentorship credits and use them on your schedule. 5, 10, or 15 lessons. The more credits you buy, the less each one costs." />
   <!-- Favicons (Dallas Arsenal) -->
   <link rel="icon" type="image/png" sizes="192x192" href="favicon.png" />
   <link rel="apple-touch-icon" href="apple-touch-icon.png" />
@@ -12,14 +12,14 @@
   <!-- Social share / Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Dallas Arsenal Volleyball Club" />
-  <meta property="og:title" content="Private Lesson Mentorship | Dallas Arsenal Volleyball Club" />
-  <meta property="og:description" content="More than a coach. A 10-month 1-on-1 volleyball mentorship with a customized training plan, film review, and a mentor in your athlete's corner. Pay in full and get one month free." />
+  <meta property="og:title" content="Private Lesson Credits | Dallas Arsenal Volleyball Club" />
+  <meta property="og:description" content="More than a coach. Buy a pack of 1-on-1 mentorship credits (5, 10, or 15 lessons) and use them on your schedule. The more you buy, the less each lesson costs." />
   <meta property="og:image" content="https://dallasarsenal.com/wp-content/uploads/2019/11/cropped-cropped-Arsenal_Shield_Logo-1-300x300.png" />
   <meta property="og:image:width" content="300" />
   <meta property="og:image:height" content="300" />
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Private Lesson Mentorship | Dallas Arsenal Volleyball Club" />
-  <meta name="twitter:description" content="More than a coach. A 10-month 1-on-1 volleyball mentorship with a customized plan, film review, and a mentor in your athlete's corner." />
+  <meta name="twitter:title" content="Private Lesson Credits | Dallas Arsenal Volleyball Club" />
+  <meta name="twitter:description" content="More than a coach. Packs of 1-on-1 mentorship credits (5, 10, or 15 lessons), used on your schedule. The more you buy, the less each lesson costs." />
   <meta name="twitter:image" content="https://dallasarsenal.com/wp-content/uploads/2019/11/cropped-cropped-Arsenal_Shield_Logo-1-300x300.png" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -261,9 +261,7 @@
       margin: 22px 0 26px; padding: 18px; border-radius: var(--radius-md);
       background: var(--paper); border: 1px solid var(--hairline);
     }
-    .pay { display: none; }
-    .plans.mode-monthly .pay--monthly { display: block; }
-    .plans.mode-full    .pay--full    { display: block; }
+    .pay { display: block; }
     .pay .pay-big {
       font-family: var(--display); font-weight: 900; font-size: 26px; color: var(--navy);
     }
@@ -446,18 +444,17 @@
   <!-- ===================== HERO ===================== -->
   <section class="hero">
     <div class="wrap">
-      <span class="eyebrow">10-Month 1-on-1 Mentorship</span>
-      <h1>Private Lesson <em>Mentorship</em></h1>
+      <span class="eyebrow">1-on-1 Mentorship Credits</span>
+      <h1>Private Lesson <em>Credits</em></h1>
       <p class="lede">
         We are more. Your athlete gets a mentor who learns their game, builds a
-        training plan around their goals, and stays in their corner all season. Not another face
-        rolling through group classes. Choose how often you train: the more you commit, the lower
-        your per-session rate.
+        training plan around their goals, and stays in their corner. Buy a pack of lesson
+        credits and use them on your schedule. The more credits you buy, the less each one costs.
       </p>
       <ul class="hero-points">
         <li>A mentor, not just a coach</li>
         <li>A custom plan, not generic classes</li>
-        <li>Pay in full &amp; get 1 month free</li>
+        <li>Use your credits anytime</li>
       </ul>
     </div>
   </section>
@@ -466,47 +463,29 @@
   <section class="section" id="plans">
     <div class="wrap">
       <div class="section-head">
-        <span class="kicker">Choose Your Membership</span>
-        <h2>Three ways to <span class="accent">train</span></h2>
-        <p class="sub">Every plan is a 10-month mentorship built around your athlete. Pick your cadence and how you pay.</p>
-      </div>
-
-      <!-- Billing toggle -->
-      <div style="text-align:center;">
-        <div class="billing-toggle" role="group" aria-label="Choose payment plan">
-          <span class="slider" id="toggleSlider"></span>
-          <button id="btnMonthly" aria-pressed="true" onclick="setMode('monthly')">Pay per session</button>
-          <button id="btnFull" aria-pressed="false" onclick="setMode('full')">Pay in Full <span class="save">1 month free</span></button>
-        </div>
-        <p class="toggle-note">
-          Pay the season up front and <b>get one month free</b>. That's 10% off, locked in.
-        </p>
+        <span class="kicker">Choose Your Credit Pack</span>
+        <h2>Pick your <span class="accent">credit pack</span></h2>
+        <p class="sub">Every credit is a 1-on-1 mentorship session your athlete can book whenever works. Buy more, save more.</p>
       </div>
 
       <!-- Cards -->
-      <div class="plans mode-monthly" id="planCards">
+      <div class="plans" id="planCards">
 
-        <!-- Once a Month -->
+        <!-- 5 Credits -->
         <article class="plan">
-          <span class="freq">1× per month</span>
+          <span class="freq">5 credits</span>
           <h3>The Foundation</h3>
-          <div class="tier-label">Tier 1 · Once a month</div>
+          <div class="tier-label">Best for trying private lessons</div>
 
           <div class="price">
-            <span class="amt">$114</span><span class="per">/ session</span>
+            <span class="amt">$119</span><span class="per">/ credit</span>
           </div>
-          <div class="price-foot">1 session each month · <b>10 sessions</b> per season</div>
-
+          <div class="price-foot">5 private lessons to use anytime</div>
 
           <div class="paybox">
-            <div class="pay pay--monthly">
-              <div class="pay-big">$114<small> / month</small></div>
-              <div class="pay-sub">Billed monthly · 10 payments · <b>$1,140</b> total</div>
-            </div>
-            <div class="pay pay--full">
-              <span class="free-pill">1 Month Free</span>
-              <div class="pay-big">$1,026<small> today</small></div>
-              <div class="pay-sub"><s>$1,140</s> &nbsp;<span class="save-line">Save $114</span></div>
+            <div class="pay">
+              <div class="pay-big">$595<small> total</small></div>
+              <div class="pay-sub">5 credits · $119 each · one-time payment</div>
             </div>
           </div>
 
@@ -516,62 +495,51 @@
             <li>Makeup &amp; sick-day flexibility</li>
             <li>Unlimited online skills drills</li>
           </ul>
-          <a class="cta" href="#deposit" onclick="showDeposit('The Foundation (once a month)'); return false;">Choose Once a Month</a>
+          <a class="cta" href="#deposit" onclick="showDeposit('the 5-credit pack'); return false;">Choose 5 Credits</a>
         </article>
 
-        <!-- Bi-Weekly -->
+        <!-- 10 Credits -->
         <article class="plan">
-          <span class="freq">2× per month</span>
+          <span class="freq">10 credits</span>
           <h3>Build Momentum</h3>
-          <div class="tier-label">Tier 2 · Bi-weekly</div>
+          <div class="tier-label">Our most popular pack</div>
 
           <div class="price">
-            <span class="amt">$104</span><span class="per">/ session</span>
+            <span class="amt">$109</span><span class="per">/ credit</span>
           </div>
-          <div class="price-foot">1 session every 2 weeks · <b>20 sessions</b> per season</div>
+          <div class="price-foot">10 private lessons to use anytime</div>
 
           <div class="paybox">
-            <div class="pay pay--monthly">
-              <div class="pay-big">$104<small> / 2 weeks</small></div>
-              <div class="pay-sub">Billed every 2 weeks · 20 payments · <b>$2,080</b> total</div>
-            </div>
-            <div class="pay pay--full">
-              <span class="free-pill">1 Month Free</span>
-              <div class="pay-big">$1,872<small> today</small></div>
-              <div class="pay-sub"><s>$2,080</s> &nbsp;<span class="save-line">Save $208</span></div>
+            <div class="pay">
+              <div class="pay-big">$1,090<small> total</small></div>
+              <div class="pay-sub">10 credits · $109 each · one-time payment</div>
             </div>
           </div>
 
           <ul class="feat-list">
             <li>Everything in The Foundation</li>
             <li>Personalized nutrition plan</li>
-            <li>Strength &amp; conditioning</li>
-            <li>Bi-weekly check-ins</li>
+            <li>$10 less per credit</li>
           </ul>
-          <a class="cta" href="#deposit" onclick="showDeposit('Build Momentum (bi-weekly)'); return false;">Choose Bi-Weekly</a>
+          <a class="cta" href="#deposit" onclick="showDeposit('the 10-credit pack'); return false;">Choose 10 Credits</a>
         </article>
 
-        <!-- Weekly (featured) -->
+        <!-- 15 Credits (featured) -->
         <article class="plan featured">
           <span class="tag">★ Best Value</span>
-          <span class="freq">Weekly</span>
+          <span class="freq">15 credits</span>
           <h3>The Full Program</h3>
-          <div class="tier-label">Tier 3 · Weekly</div>
+          <div class="tier-label">Maximum progress, lowest rate</div>
 
           <div class="price">
-            <span class="amt">$99</span><span class="per">/ session</span>
+            <span class="amt">$99</span><span class="per">/ credit</span>
           </div>
-          <div class="price-foot">1 session each week · <b>40 sessions</b> per season</div>
+          <div class="price-foot">15 private lessons to use anytime</div>
 
           <div class="paybox">
-            <div class="pay pay--monthly">
-              <div class="pay-big">$99<small> / week</small></div>
-              <div class="pay-sub">Billed weekly · 40 payments · <b>$3,960</b> total</div>
-            </div>
-            <div class="pay pay--full">
-              <span class="free-pill">1 Month Free</span>
-              <div class="pay-big">$3,564<small> today</small></div>
-              <div class="pay-sub"><s>$3,960</s> &nbsp;<span class="save-line">Save $396</span></div>
+            <div class="pay">
+              <div class="pay-big">$1,485<small> total</small></div>
+              <div class="pay-sub">15 credits · $99 each · one-time payment</div>
             </div>
           </div>
 
@@ -579,9 +547,9 @@
             <li>Everything in Build Momentum</li>
             <li>Film review &amp; breakdown</li>
             <li>Personalized analysis: nutrition, training &amp; stretching</li>
-            <li>Full mentor access &amp; weekly check-ins</li>
+            <li>Full mentor access</li>
           </ul>
-          <a class="cta" href="#deposit" onclick="showDeposit('The Full Program (weekly)'); return false;">Choose Weekly</a>
+          <a class="cta" href="#deposit" onclick="showDeposit('the 15-credit pack'); return false;">Choose 15 Credits</a>
         </article>
 
       </div>
@@ -593,8 +561,8 @@
     <div class="wrap">
       <div class="deposit-card">
         <span class="kicker">Almost there</span>
-        <h2 id="depositHeading">Secure your spot with a <span class="amount">$100 deposit</span></h2>
-        <p class="deposit-lede">You're reserving <b id="depositPlan">your membership</b>. Put down a $100 deposit to secure your spot. We'll reach out to schedule your first session.</p>
+        <h2 id="depositHeading">Reserve your credits with a <span class="amount">$100 deposit</span></h2>
+        <p class="deposit-lede">You're reserving <b id="depositPlan">your credit pack</b>. Put down a $100 deposit to lock in your credits. We'll reach out to schedule your first lesson.</p>
         <a class="deposit-btn" href="https://buy.stripe.com/cNi7sL38n9lDdP5ec2gMw00" target="_blank" rel="noopener">Put down your $100 deposit</a>
         <p class="deposit-note">Secure checkout powered by Stripe.</p>
       </div>
@@ -606,17 +574,17 @@
     <div class="wrap">
       <div class="section-head">
         <span class="kicker">Side by Side</span>
-        <h2>Compare <span class="accent">memberships</span></h2>
-        <p class="sub">Every plan is real 1-on-1 mentorship with a customized training plan, not drop-in classes. Here's how the three tiers stack up.</p>
+        <h2>Compare <span class="accent">credit packs</span></h2>
+        <p class="sub">Every credit is real 1-on-1 mentorship with a customized plan, not drop-in classes. Here's how the three packs compare.</p>
       </div>
 
       <div class="compare-table">
         <!-- header -->
         <div class="compare-row hdr">
           <div class="feat-name">What you get</div>
-          <div class="col">Once a Month</div>
-          <div class="col">Bi-Weekly</div>
-          <div class="col feat">Weekly <span class="best">Best Value</span></div>
+          <div class="col">5 Credits</div>
+          <div class="col">10 Credits</div>
+          <div class="col feat">15 Credits <span class="best">Best Value</span></div>
         </div>
 
         <!-- specs -->
@@ -624,28 +592,22 @@
           <div>The basics</div><div class="col"></div><div class="col"></div><div class="col feat"></div>
         </div>
         <div class="compare-row">
-          <div class="feat-name">Sessions per season</div>
+          <div class="feat-name">Lessons (credits)</div>
+          <div class="col val">5</div>
           <div class="col val">10</div>
-          <div class="col val">20</div>
-          <div class="col val feat">40</div>
+          <div class="col val feat">15</div>
         </div>
         <div class="compare-row">
-          <div class="feat-name">Check-in cadence</div>
-          <div class="col val">Monthly</div>
-          <div class="col val">Bi-weekly</div>
-          <div class="col val feat">Weekly</div>
-        </div>
-        <div class="compare-row">
-          <div class="feat-name">Price per session</div>
-          <div class="col val">$114</div>
-          <div class="col val">$104</div>
+          <div class="feat-name">Price per credit</div>
+          <div class="col val">$119</div>
+          <div class="col val">$109</div>
           <div class="col val feat">$99</div>
         </div>
         <div class="compare-row discount-row">
-          <div class="feat-name">Pay in full &amp; get 1 month free</div>
-          <div class="col val">$1,026<span class="save-amt">save $114</span></div>
-          <div class="col val">$1,872<span class="save-amt">save $208</span></div>
-          <div class="col val feat">$3,564<span class="save-amt">save $396</span></div>
+          <div class="feat-name">Pack price</div>
+          <div class="col val">$595</div>
+          <div class="col val">$1,090</div>
+          <div class="col val feat">$1,485</div>
         </div>
 
         <!-- mentorship & training features -->
@@ -661,12 +623,6 @@
         <div class="compare-row">
           <div class="feat-name">Customized training plan</div>
           <div class="col"><span class="check">✓</span></div>
-          <div class="col"><span class="check">✓</span></div>
-          <div class="col feat"><span class="check gold">✓</span></div>
-        </div>
-        <div class="compare-row">
-          <div class="feat-name">Strength &amp; conditioning</div>
-          <div class="col"><span class="dash" aria-label="not included">–</span></div>
           <div class="col"><span class="check">✓</span></div>
           <div class="col feat"><span class="check gold">✓</span></div>
         </div>
@@ -707,7 +663,7 @@
         </div>
         <!-- premium: the full program (weekly only) -->
         <div class="compare-row section-row">
-          <div>The Full Program</div><div class="col"></div><div class="col"></div><div class="col feat"></div>
+          <div>15-credit pack only</div><div class="col"></div><div class="col"></div><div class="col feat"></div>
         </div>
         <div class="compare-row">
           <div class="feat-name">Film review &amp; breakdown</div>
@@ -724,7 +680,7 @@
       </div>
 
       <p class="compare-foot">
-        Prefer to pay up front? <b>Pay your full season and get one month free</b>, a 10% savings on any membership.
+        <b>The more credits you buy, the less each lesson costs.</b> Use them whenever works for your athlete.
       </p>
     </div>
   </section>
@@ -742,9 +698,9 @@
           <span>Volleyball Club</span>
         </span>
       </a>
-      <p>Private Lesson Mentorship · 10-Month Season · Plano, TX</p>
+      <p>Private Lesson Credits · 1-on-1 Mentorship · Plano, TX</p>
       <p style="margin-top:6px;">Questions? <a class="gold" href="#">Contact your mentor →</a></p>
-      <p class="disc">Sample membership page for review. Pricing &amp; terms subject to change.</p>
+      <p class="disc">Sample credits page for review. Pricing &amp; terms subject to change.</p>
     </div>
   </footer>
 
@@ -759,32 +715,7 @@
       sec.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
 
-    function setMode(mode) {
-      var plans = document.getElementById('planCards');
-      var btnM = document.getElementById('btnMonthly');
-      var btnF = document.getElementById('btnFull');
-      var slider = document.getElementById('toggleSlider');
-      var isFull = mode === 'full';
-
-      plans.classList.toggle('mode-full', isFull);
-      plans.classList.toggle('mode-monthly', !isFull);
-      btnM.setAttribute('aria-pressed', String(!isFull));
-      btnF.setAttribute('aria-pressed', String(isFull));
-
-      // slide the pill under the active button
-      var active = isFull ? btnF : btnM;
-      slider.style.width = active.offsetWidth + 'px';
-      slider.style.transform = 'translateX(' + (active.offsetLeft - 5) + 'px)';
-    }
-
-    // position the slider on load + when fonts/layout settle
-    function initSlider() { setMode('monthly'); }
-    window.addEventListener('load', initSlider);
-    window.addEventListener('resize', function () {
-      var isFull = document.getElementById('planCards').classList.contains('mode-full');
-      setMode(isFull ? 'full' : 'monthly');
-    });
-    initSlider();
+    /* Billing toggle removed for the credits model; only the deposit reveal remains. */
   </script>
 </body>
 </html>
